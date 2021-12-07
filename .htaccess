@@ -1,0 +1,9 @@
+<IfModule mod_headers.c>
+   Header set Strict-Transport-Security max-age=16070400;
+</IfModule>
+
+#Remove php file extension
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
